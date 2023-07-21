@@ -1,6 +1,7 @@
 package remote
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"net/http"
@@ -9,6 +10,7 @@ import (
 	"strings"
 	"time"
 
+	"cloud.google.com/go/storage"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/aws/aws-sdk-go/service/s3/s3iface"
@@ -16,6 +18,8 @@ import (
 	"github.com/jszwec/s3fs"
 	"github.com/k1LoW/ghfs"
 	"github.com/k1LoW/go-github-client/v53/factory"
+	"github.com/mauri870/gcsfs"
+	"google.golang.org/api/option"
 )
 
 var globalHTTPClient = &http.Client{
@@ -26,10 +30,13 @@ var globalGitHubClient *github.Client
 
 var globalS3Client s3iface.S3API
 
+var globalGCSClient *storage.Client
+
 type clientSet struct {
 	httpClient   *http.Client
 	githubClient *github.Client
 	s3Client     s3iface.S3API
+	gcsClient    *storage.Client
 }
 
 func newClientSet(opts []Option) *clientSet {
@@ -37,6 +44,7 @@ func newClientSet(opts []Option) *clientSet {
 		httpClient:   globalHTTPClient,
 		githubClient: globalGitHubClient,
 		s3Client:     globalS3Client,
+		gcsClient:    globalGCSClient,
 	}
 	for _, opt := range opts {
 		opt(cs)
@@ -67,6 +75,13 @@ func S3Client(c s3iface.S3API) Option {
 	}
 }
 
+// GCSClient set storage.Client.
+func GCSClient(c *storage.Client) Option {
+	return func(cs *clientSet) {
+		cs.gcsClient = c
+	}
+}
+
 // Open remote file.
 func Open(raw string, opts ...Option) (io.ReadCloser, error) {
 	u, err := url.Parse(raw)
@@ -81,6 +96,8 @@ func Open(raw string, opts ...Option) (io.ReadCloser, error) {
 		return openGitHub(cs.githubClient, raw)
 	case "s3":
 		return openS3(cs.s3Client, raw)
+	case "gs", "gcs":
+		return openGCS(cs.gcsClient, raw)
 	default:
 		p := strings.TrimPrefix(strings.TrimPrefix(raw, "file://"), "local://")
 		return os.Open(p)
@@ -145,5 +162,29 @@ func openS3(c s3iface.S3API, raw string) (io.ReadCloser, error) {
 	bucket := splitted[0]
 	name := strings.Join(splitted[1:], "/")
 	fsys := s3fs.New(c, bucket)
+	return fsys.Open(name)
+}
+
+func openGCS(c *storage.Client, raw string) (io.ReadCloser, error) {
+	if c == nil && globalGCSClient == nil {
+		var err error
+		ctx := context.Background()
+		if os.Getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON") != "" {
+			c, err = storage.NewClient(ctx, option.WithCredentialsJSON([]byte(os.Getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON"))))
+		} else {
+			c, err = storage.NewClient(ctx)
+		}
+		if err != nil {
+			return nil, err
+		}
+		globalGCSClient = c
+	}
+	splitted := strings.Split(strings.TrimPrefix(strings.TrimPrefix(raw, "gs://"), "gcs://"), "/")
+	if len(splitted) < 2 {
+		return nil, fmt.Errorf("invalid gcs path: %s", raw)
+	}
+	bucket := splitted[0]
+	name := strings.Join(splitted[1:], "/")
+	fsys := gcsfs.NewWithClient(c, bucket)
 	return fsys.Open(name)
 }
