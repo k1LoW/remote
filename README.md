@@ -24,3 +24,15 @@ defer f.Close()
 f, _, := remote.Open("s3://my-bucket/path/to/file.txt")
 defer f.Close()
 ```
+
+### Google Cloud Storage
+
+``` go
+f, _, := remote.Open("gs://my-bucket/path/to/file.txt")
+defer f.Close()
+```
+
+``` go
+f, _, := remote.Open("gcs://my-bucket/path/to/file.txt")
+defer f.Close()
+```
