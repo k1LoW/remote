@@ -10,6 +10,7 @@ require (
 	github.com/k1LoW/ghfs v1.1.0
 	github.com/k1LoW/go-github-client/v53 v53.2.11
 	github.com/mauri870/gcsfs v0.0.0-20220203135357-0da01ba4e96d
+	google.golang.org/api v0.126.0
 )
 
 require (
@@ -39,7 +40,6 @@ require (
 	golang.org/x/sys v0.10.0 // indirect
 	golang.org/x/text v0.11.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
-	google.golang.org/api v0.126.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto v0.0.0-20230530153820-e85fd2cbaebc // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20230530153820-e85fd2cbaebc // indirect
