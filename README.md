@@ -17,3 +17,10 @@ defer f.Close()
 f, _, := remote.Open("github://k1LoW/tbls/README.md")
 defer f.Close()
 ```
+
+### Amazon S3
+
+``` go
+f, _, := remote.Open("s3://my-bucket/path/to/file.txt")
+defer f.Close()
+```

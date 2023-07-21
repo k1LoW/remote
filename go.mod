@@ -3,7 +3,9 @@ module github.com/k1LoW/remote
 go 1.20
 
 require (
+	github.com/aws/aws-sdk-go v1.44.305
 	github.com/google/go-github/v53 v53.2.0
+	github.com/jszwec/s3fs v0.4.0
 	github.com/k1LoW/ghfs v1.1.0
 	github.com/k1LoW/go-github-client/v53 v53.2.11
 )
@@ -17,6 +19,7 @@ require (
 	github.com/golang-jwt/jwt/v4 v4.5.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
+	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	golang.org/x/crypto v0.11.0 // indirect
 	golang.org/x/net v0.12.0 // indirect
 	golang.org/x/oauth2 v0.10.0 // indirect
