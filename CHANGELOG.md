@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.1.2](https://github.com/k1LoW/remote/compare/v0.1.1...v0.1.2) - 2023-12-19
+### Other Changes
+- Bump golang.org/x/crypto from 0.14.0 to 0.17.0 by @dependabot in https://github.com/k1LoW/remote/pull/9
+
 ## [v0.1.1](https://github.com/k1LoW/remote/compare/v0.1.0...v0.1.1) - 2023-10-12
 ### Other Changes
 - Bump golang.org/x/net from 0.12.0 to 0.17.0 by @dependabot in https://github.com/k1LoW/remote/pull/7
