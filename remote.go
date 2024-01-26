@@ -14,10 +14,10 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/aws/aws-sdk-go/service/s3/s3iface"
-	"github.com/google/go-github/v53/github"
+	"github.com/google/go-github/v58/github"
 	"github.com/jszwec/s3fs"
 	"github.com/k1LoW/ghfs"
-	"github.com/k1LoW/go-github-client/v53/factory"
+	"github.com/k1LoW/go-github-client/v58/factory"
 	"github.com/mauri870/gcsfs"
 	"google.golang.org/api/option"
 )
