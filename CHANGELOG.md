@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.2.1](https://github.com/k1LoW/remote/compare/v0.2.0...v0.2.1) - 2024-03-13
+### Other Changes
+- Bump google.golang.org/protobuf from 1.30.0 to 1.33.0 by @dependabot in https://github.com/k1LoW/remote/pull/14
+
 ## [v0.2.0](https://github.com/k1LoW/remote/compare/v0.1.2...v0.2.0) - 2024-01-26
 ### Other Changes
 - Bump github.com/cloudflare/circl from 1.3.3 to 1.3.7 by @dependabot in https://github.com/k1LoW/remote/pull/11
