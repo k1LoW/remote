@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.2.1](https://github.com/k1LoW/remote/compare/v0.2.0...v0.2.1) - 2024-11-14
+### Other Changes
+- Bump google.golang.org/protobuf from 1.30.0 to 1.33.0 by @dependabot in https://github.com/k1LoW/remote/pull/14
+- Bump golang.org/x/net from 0.17.0 to 0.23.0 by @dependabot in https://github.com/k1LoW/remote/pull/16
+- Bump github.com/golang-jwt/jwt/v4 from 4.5.0 to 4.5.1 by @dependabot in https://github.com/k1LoW/remote/pull/17
+
 ## [v0.2.0](https://github.com/k1LoW/remote/compare/v0.1.2...v0.2.0) - 2024-01-26
 ### Other Changes
 - Bump github.com/cloudflare/circl from 1.3.3 to 1.3.7 by @dependabot in https://github.com/k1LoW/remote/pull/11
