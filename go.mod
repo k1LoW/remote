@@ -1,6 +1,6 @@
 module github.com/k1LoW/remote
 
-go 1.21.6
+go 1.23.7
 
 require (
 	cloud.google.com/go/storage v1.31.0
