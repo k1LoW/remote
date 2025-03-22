@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.3.0](https://github.com/k1LoW/remote/compare/v0.2.0...v0.3.0) - 2025-03-22
+### Other Changes
+- Bump google.golang.org/protobuf from 1.30.0 to 1.33.0 by @dependabot in https://github.com/k1LoW/remote/pull/14
+- Bump golang.org/x/net from 0.17.0 to 0.23.0 by @dependabot in https://github.com/k1LoW/remote/pull/16
+- Bump github.com/golang-jwt/jwt/v4 from 4.5.0 to 4.5.1 by @dependabot in https://github.com/k1LoW/remote/pull/17
+- Bump github.com/cli/go-gh/v2 from 2.4.0 to 2.11.1 by @dependabot in https://github.com/k1LoW/remote/pull/18
+- Bump golang.org/x/crypto from 0.21.0 to 0.31.0 by @dependabot in https://github.com/k1LoW/remote/pull/19
+- Bump github.com/golang-jwt/jwt/v4 from 4.5.1 to 4.5.2 by @dependabot in https://github.com/k1LoW/remote/pull/21
+- Bump golang.org/x/net from 0.23.0 to 0.36.0 by @dependabot in https://github.com/k1LoW/remote/pull/20
+
 ## [v0.2.0](https://github.com/k1LoW/remote/compare/v0.1.2...v0.2.0) - 2024-01-26
 ### Other Changes
 - Bump github.com/cloudflare/circl from 1.3.3 to 1.3.7 by @dependabot in https://github.com/k1LoW/remote/pull/11
