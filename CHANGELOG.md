@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.3.1](https://github.com/k1LoW/remote/compare/v0.3.0...v0.3.1) - 2025-04-18
+### Other Changes
+- Bump golang.org/x/net from 0.36.0 to 0.38.0 by @dependabot in https://github.com/k1LoW/remote/pull/23
+
 ## [v0.3.0](https://github.com/k1LoW/remote/compare/v0.2.0...v0.3.0) - 2025-03-22
 ### Other Changes
 - Bump google.golang.org/protobuf from 1.30.0 to 1.33.0 by @dependabot in https://github.com/k1LoW/remote/pull/14
