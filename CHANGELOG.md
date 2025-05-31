@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.3.2](https://github.com/k1LoW/remote/compare/v0.3.1...v0.3.2) - 2025-05-31
+### Other Changes
+- Bump github.com/cli/go-gh/v2 from 2.11.1 to 2.12.1 by @dependabot in https://github.com/k1LoW/remote/pull/25
+
 ## [v0.3.1](https://github.com/k1LoW/remote/compare/v0.3.0...v0.3.1) - 2025-04-18
 ### Other Changes
 - Bump golang.org/x/net from 0.36.0 to 0.38.0 by @dependabot in https://github.com/k1LoW/remote/pull/23
