@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.3.3](https://github.com/k1LoW/remote/compare/v0.3.2...v0.3.3) - 2025-07-18
+### Other Changes
+- Bump golang.org/x/oauth2 from 0.8.0 to 0.27.0 by @dependabot[bot] in https://github.com/k1LoW/remote/pull/27
+
 ## [v0.3.2](https://github.com/k1LoW/remote/compare/v0.3.1...v0.3.2) - 2025-05-31
 ### Other Changes
 - Bump github.com/cli/go-gh/v2 from 2.11.1 to 2.12.1 by @dependabot in https://github.com/k1LoW/remote/pull/25
