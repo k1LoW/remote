@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.3.4](https://github.com/k1LoW/remote/compare/v0.3.3...v0.3.4) - 2025-10-22
+### Other Changes
+- chore: setup tagpr labels by @k1LoW in https://github.com/k1LoW/remote/pull/29
+
 ## [v0.3.3](https://github.com/k1LoW/remote/compare/v0.3.2...v0.3.3) - 2025-07-18
 ### Other Changes
 - Bump golang.org/x/oauth2 from 0.8.0 to 0.27.0 by @dependabot[bot] in https://github.com/k1LoW/remote/pull/27
