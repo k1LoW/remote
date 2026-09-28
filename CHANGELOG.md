@@ -1,5 +1,10 @@
 # Changelog
 
+## [v0.3.5](https://github.com/k1LoW/remote/compare/v0.3.4...v0.3.5) - 2026-09-28
+
+### Other Changes
+- ci: generate CREDITS with gocredits v1.0.0 from a make target by @k1LoW in https://github.com/k1LoW/remote/pull/33
+
 ## [v0.3.4](https://github.com/k1LoW/remote/compare/v0.3.3...v0.3.4) - 2025-11-20
 ### Other Changes
 - chore: setup tagpr labels by @k1LoW in https://github.com/k1LoW/remote/pull/29
