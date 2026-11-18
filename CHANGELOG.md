@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.3.5](https://github.com/k1LoW/remote/compare/v0.3.4...v0.3.5) - 2026-11-18
+
+### Other Changes
+- ci: generate CREDITS with gocredits v1.0.0 from a make target by @k1LoW in https://github.com/k1LoW/remote/pull/33
+- fix(deps): bump google.golang.org/api from 0.126.0 to 0.257.0 by @k1LoW in https://github.com/k1LoW/remote/pull/35
+- chore(deps): bump google.golang.org/grpc from 1.77.0 to 1.83.2 by @dependabot[bot] in https://github.com/k1LoW/remote/pull/32
+- chore(deps): bump github.com/go-jose/go-jose/v4 from 4.1.4 to 4.1.6 by @dependabot[bot] in https://github.com/k1LoW/remote/pull/38
+- chore(deps): bump go.opentelemetry.io/otel/sdk from 1.44.0 to 1.47.0 by @dependabot[bot] in https://github.com/k1LoW/remote/pull/37
+- fix: replace the deprecated option.WithCredentialsJSON by @k1LoW in https://github.com/k1LoW/remote/pull/40
+
 ## [v0.3.4](https://github.com/k1LoW/remote/compare/v0.3.3...v0.3.4) - 2025-11-20
 ### Other Changes
 - chore: setup tagpr labels by @k1LoW in https://github.com/k1LoW/remote/pull/29
