@@ -2,6 +2,7 @@ package remote
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
@@ -170,7 +171,15 @@ func openGCS(c *storage.Client, raw string) (io.ReadCloser, error) {
 		var err error
 		ctx := context.Background()
 		if os.Getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON") != "" {
-			c, err = storage.NewClient(ctx, option.WithCredentialsJSON([]byte(os.Getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON"))))
+			b := []byte(os.Getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON"))
+			// The credential type is read from the JSON itself rather than fixed to one type, because the variable is set by the operator and every type accepted before must keep working.
+			var cred struct {
+				Type string `json:"type"`
+			}
+			if err := json.Unmarshal(b, &cred); err != nil {
+				return nil, fmt.Errorf("invalid GOOGLE_APPLICATION_CREDENTIALS_JSON: %w", err)
+			}
+			c, err = storage.NewClient(ctx, option.WithAuthCredentialsJSON(option.CredentialsType(cred.Type), b))
 		} else {
 			c, err = storage.NewClient(ctx)
 		}
